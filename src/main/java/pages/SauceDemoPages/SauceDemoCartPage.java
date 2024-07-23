@@ -1,4 +1,4 @@
 package pages.SauceDemoPages;
 
-public class CheckoutTwoPage {
+public class SauceDemoCartPage {
 }
