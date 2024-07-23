@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import steps.Hooks;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BasePages {
 
@@ -26,7 +27,7 @@ public class BasePages {
             e.printStackTrace();
         }
     }
-    public boolean esperarElemento(WebElement elemento, int tiempoMaximoSegundos) {
+    public static boolean esperarElemento(WebElement elemento, int tiempoMaximoSegundos) {
         wait = new WebDriverWait(driver, Duration.ofSeconds(tiempoMaximoSegundos));
         try {
             WebElement element = wait.until(ExpectedConditions.visibilityOf(elemento));
@@ -57,11 +58,15 @@ public class BasePages {
     public static void validateElementText(WebElement element, String txt) {
         try {
             String actualText = element.getText();
+            System.out.println("Validando texto del elemento:\n" +
+                    "Texto obtenido: " + actualText + "\n" +
+                    "Texto esperado: " + txt);
             Assert.assertEquals("El texto del elemento no coincide con lo esperado.\n" +
                             "Texto obtenido: " + actualText + "\n" +
                             "Texto esperado: " + txt,
                     txt, actualText);
         } catch (Exception e) {
+            System.out.println("Ocurrió un error, no se encuentra el elemento disponible: " + e.getMessage());
             Assert.fail("Ocurrió un error, no se encuentra el elemento disponible: " + e.getMessage());
         }
     }
@@ -80,4 +85,18 @@ public class BasePages {
             e.printStackTrace();
         }
     }
+
+    public boolean esperarElementos(List<WebElement> elementos, int tiempoMaximoSegundos) {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(tiempoMaximoSegundos));
+        try {
+            List<WebElement> elements = wait.until(ExpectedConditions.visibilityOfAllElements(elementos));
+            System.out.println("Los elementos se encuentran disponibles");
+            Assert.assertNotNull("Los elementos esperados no son nulos", elements);
+        } catch (Exception e) {
+            Assert.fail("Ocurrió un error, no se encuentran los elementos disponibles: " + e.getMessage());
+            return false;
+        }
+        return true;
+    }
 }
+

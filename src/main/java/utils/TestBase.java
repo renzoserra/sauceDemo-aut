@@ -3,10 +3,12 @@ package utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import pages.SauceDemoPages.SauceDemoHomePage;
+import pages.SauceDemoPages.SauceDemoInventoryPage;
 import steps.Hooks;
 
 public class TestBase {
     protected WebDriver driver = Hooks.getDriver();
     protected SauceDemoHomePage sauceDemoHomePage =  PageFactory.initElements(driver, SauceDemoHomePage.class);
+    protected SauceDemoInventoryPage sauceDemoInventoryPage = PageFactory.initElements(driver, SauceDemoInventoryPage.class);
 
 }

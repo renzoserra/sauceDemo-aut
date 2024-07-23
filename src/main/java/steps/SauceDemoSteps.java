@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import utils.BasePages;
 import utils.TestBase;
 
@@ -32,6 +33,31 @@ public class SauceDemoSteps extends TestBase {
 
     @And("Visualizo titulo seccion {string}")
     public void visualizoTituloSeccion(String arg0) {
+        switch (arg0){
+            case "Products":
+                sauceDemoInventoryPage.validateTitlePage(arg0);
+                break;
+            case "Your Cart":
+                break;
+            case "Checkout: Your Information":
+                break;
+            case "Checkout: Overview":
+                break;
+            case "Checkout: Complete!":
+                break;
+            default:
+                Assert.fail("El titulo no forma parte de las opciones a validar");
+        }
 
+    }
+
+    @And("Agrego {string} productos al azar carrito de compras")
+    public void agregoProductosAlAzarCarritoDeCompras(String arg0) {
+        sauceDemoInventoryPage.addItemsToCart(Integer.parseInt(arg0));
+    }
+
+    @And("Hago click en el boton del carrito")
+    public void hagoClickEnElBotonDelCarrito() {
+        sauceDemoInventoryPage.botonLogin(true);
     }
 }
