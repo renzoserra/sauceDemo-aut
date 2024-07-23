@@ -24,11 +24,11 @@ Feature: Flujo de compra en sitio sauce demo
   Scenario: Validar flujo de compra en la web
     Given Ingreso a la web "https://www.saucedemo.com/"
     When  Ingreso credenciales validas "standard_user" y "secret_sauce"
-    And   Hago click en el boton login
+    And   Hago click en el boton "Login"
     Then  Visualizo que estoy en la web con el endpoint "inventory"
     And   Visualizo titulo seccion "Products"
     And   Agrego "2" productos al azar carrito de compras
-    And   Hago click en el boton del carrito
+    And   Hago click en el boton "Carrito"
     And   Visualizo que estoy en la web con el endpoint "cart"
     And   Visualizo titulo seccion "Your Cart"
     And   Valido que carrito contiene 2 productos en el carrito

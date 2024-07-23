@@ -21,11 +21,6 @@ public class SauceDemoSteps extends TestBase {
         sauceDemoHomePage.typeCredentials(arg0,arg1);
     }
 
-    @And("Hago click en el boton login")
-    public void hagoClickEnElBotonLogin() {
-        sauceDemoHomePage.botonLogin(true);
-    }
-
     @Then("Visualizo que estoy en la web con el endpoint {string}")
     public void visualizoQueEstoyEnLaWebConElEndpoint(String arg0) {
             BasePages.validateUrl(arg0);
@@ -60,11 +55,6 @@ public class SauceDemoSteps extends TestBase {
         sauceDemoInventoryPage.addItemsToCart(Integer.parseInt(arg0));
     }
 
-    @And("Hago click en el boton del carrito")
-    public void hagoClickEnElBotonDelCarrito() {
-        sauceDemoInventoryPage.botonLogin(true);
-    }
-
     @And("Valido que carrito contiene {int} productos en el carrito")
     public void validoQueCarritoContieneProductosEnElCarrito(int arg0) {
         sauceDemoCartPage.validateItemsInCart(arg0);
@@ -81,6 +71,12 @@ public class SauceDemoSteps extends TestBase {
                 break;
             case "Finish":
                 sauceDemoCheckoutTwoPage.botonFinish(true);
+                break;
+            case "Login":
+                sauceDemoHomePage.botonLogin(true);
+                break;
+            case "Carrito":
+                sauceDemoInventoryPage.botonLogin(true);
                 break;
             default:
                 Assert.fail("El texto de botón no forma parte de las opciones a validar");
