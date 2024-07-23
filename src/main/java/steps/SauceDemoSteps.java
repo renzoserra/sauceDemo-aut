@@ -41,6 +41,7 @@ public class SauceDemoSteps extends TestBase {
                 sauceDemoCartPage.validateTitlePage(arg0);
                 break;
             case "Checkout: Your Information":
+                sauceDemoCheckoutOnePage.validateTitlePage(arg0);
                 break;
             case "Checkout: Overview":
                 break;
@@ -69,6 +70,23 @@ public class SauceDemoSteps extends TestBase {
 
     @And("Hago click en el boton {string}")
     public void hagoClickEnElBoton(String arg0) {
-        sauceDemoCartPage.botonCheckout(true);
+        switch (arg0){
+            case "Checkout":
+                sauceDemoCartPage.botonCheckout(true);
+                break;
+            case "Continue":
+                sauceDemoCheckoutOnePage.botonContinue(true);
+                break;
+            case "Finish":
+                break;
+            default:
+                Assert.fail("El texto de botón no forma parte de las opciones a validar");
+        }
+
+    }
+
+    @And("Ingreso {string} en el campo {string}")
+    public void ingresoEnElCampo(String arg0, String arg1) {
+        sauceDemoCheckoutOnePage.typeInputs(arg0,arg1);
     }
 }

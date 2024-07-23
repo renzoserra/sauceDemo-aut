@@ -3,6 +3,7 @@ package utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import pages.SauceDemoPages.SauceDemoCartPage;
+import pages.SauceDemoPages.SauceDemoCheckoutOnePage;
 import pages.SauceDemoPages.SauceDemoHomePage;
 import pages.SauceDemoPages.SauceDemoInventoryPage;
 import steps.Hooks;
@@ -12,6 +13,8 @@ public class TestBase {
     protected SauceDemoHomePage sauceDemoHomePage =  PageFactory.initElements(driver, SauceDemoHomePage.class);
     protected SauceDemoInventoryPage sauceDemoInventoryPage = PageFactory.initElements(driver, SauceDemoInventoryPage.class);
     protected SauceDemoCartPage sauceDemoCartPage = PageFactory.initElements(driver, SauceDemoCartPage.class);
+    protected SauceDemoCheckoutOnePage sauceDemoCheckoutOnePage = PageFactory.initElements(driver, SauceDemoCheckoutOnePage.class);
+
 
 
 }
