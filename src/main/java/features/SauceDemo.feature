@@ -43,8 +43,8 @@ Feature: Flujo de compra en sitio sauce demo
     And   Visualizo titulo seccion "Checkout: Overview"
     And   Hago click en el boton "Finish"
     And   Visualizo que estoy en la web con el endpoint "checkout-complete"
-#    And   Visualizo titulo seccion "Checkout: Complete!"
-#    And   Valido texto de finalizacion de compra "Thank you for your order!"
+    And   Visualizo titulo seccion "Checkout: Complete!"
+    And   Valido texto de finalizacion de compra "Thank you for your order!"
 
 
 

@@ -47,6 +47,7 @@ public class SauceDemoSteps extends TestBase {
                 sauceDemoCheckoutTwoPage.validateTitlePage(arg0);
                 break;
             case "Checkout: Complete!":
+                sauceDemoCheckoutCompletePage.validateText(arg0);
                 break;
             default:
                 Assert.fail("El titulo no forma parte de las opciones a validar");
@@ -90,5 +91,11 @@ public class SauceDemoSteps extends TestBase {
     @And("Ingreso {string} en el campo {string}")
     public void ingresoEnElCampo(String arg0, String arg1) {
         sauceDemoCheckoutOnePage.typeInputs(arg0,arg1);
+    }
+
+    @And("Valido texto de finalizacion de compra {string}")
+    public void validoTextoDeFinalizacionDeCompra(String arg0) {
+        sauceDemoCheckoutCompletePage.validateText(arg0);
+
     }
 }

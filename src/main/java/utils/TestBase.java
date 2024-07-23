@@ -12,6 +12,7 @@ public class TestBase {
     protected SauceDemoCartPage sauceDemoCartPage = PageFactory.initElements(driver, SauceDemoCartPage.class);
     protected SauceDemoCheckoutOnePage sauceDemoCheckoutOnePage = PageFactory.initElements(driver, SauceDemoCheckoutOnePage.class);
     protected SauceDemoCheckoutTwoPage sauceDemoCheckoutTwoPage = PageFactory.initElements(driver, SauceDemoCheckoutTwoPage.class);
+    protected SauceDemoCheckoutCompletePage sauceDemoCheckoutCompletePage = PageFactory.initElements(driver, SauceDemoCheckoutCompletePage.class);
 
 
 
