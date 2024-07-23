@@ -44,6 +44,7 @@ public class SauceDemoSteps extends TestBase {
                 sauceDemoCheckoutOnePage.validateTitlePage(arg0);
                 break;
             case "Checkout: Overview":
+                sauceDemoCheckoutTwoPage.validateTitlePage(arg0);
                 break;
             case "Checkout: Complete!":
                 break;
@@ -78,6 +79,7 @@ public class SauceDemoSteps extends TestBase {
                 sauceDemoCheckoutOnePage.botonContinue(true);
                 break;
             case "Finish":
+                sauceDemoCheckoutTwoPage.botonFinish(true);
                 break;
             default:
                 Assert.fail("El texto de botón no forma parte de las opciones a validar");
