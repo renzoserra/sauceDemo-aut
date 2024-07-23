@@ -38,6 +38,7 @@ public class SauceDemoSteps extends TestBase {
                 sauceDemoInventoryPage.validateTitlePage(arg0);
                 break;
             case "Your Cart":
+                sauceDemoCartPage.validateTitlePage(arg0);
                 break;
             case "Checkout: Your Information":
                 break;
@@ -59,5 +60,15 @@ public class SauceDemoSteps extends TestBase {
     @And("Hago click en el boton del carrito")
     public void hagoClickEnElBotonDelCarrito() {
         sauceDemoInventoryPage.botonLogin(true);
+    }
+
+    @And("Valido que carrito contiene {int} productos en el carrito")
+    public void validoQueCarritoContieneProductosEnElCarrito(int arg0) {
+        sauceDemoCartPage.validateItemsInCart(arg0);
+    }
+
+    @And("Hago click en el boton {string}")
+    public void hagoClickEnElBoton(String arg0) {
+        sauceDemoCartPage.botonCheckout(true);
     }
 }
