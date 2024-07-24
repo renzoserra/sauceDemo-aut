@@ -10,7 +10,7 @@
 **2. Clonar el Repositorio:**
 
 -   Clone el repositorio del proyecto en su máquina local usando el siguiente comando:
-        ```bash
+    ```bash
     git clone https://github.com/renzoserra/sauceDemo-aut.git
     ```
 
